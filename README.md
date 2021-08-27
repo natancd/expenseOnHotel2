@@ -36,4 +36,6 @@ Carrega o hotel selecionado/clicado e confirma se o usuário realmente deseja ex
 * Botão "Início" em ```Home/Create``` está equivocado: deveria estar como "Lista de Hoteis";
 * Apenas um botão "Buscar" na tela da lista de hoteis;
 * Disponibilizar as comodidades na tela de Edição;
-* Na tela Delete: informar o nome do hotel para maior segurança na exclusão do hotel selecionado (a ideia princial é adicionar o seguinte código: ``` if (confirm('Confirma exclusão do hotel: ' + nomeHotel + '? Esta ação não poderá ser desfeita.')) == true { deleteHotel(); }```, mas preciso estudar como validar o Controller por JavaScript.
+* Na tela Delete: informar o nome do hotel para maior segurança na exclusão do hotel selecionado (a ideia princial é adicionar o seguinte código: 
+ ```onclick="if (confirm('Confirma exclusão do hotel: ' + nomeHotel + '? Esta ação não poderá ser desfeita.')) == true { deleteHotel(); }"```
+ mas preciso estudar como validar o Controller por JavaScript).

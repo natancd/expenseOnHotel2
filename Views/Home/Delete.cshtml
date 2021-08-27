@@ -1,0 +1,104 @@
+﻿@model ExpenseOnHotel2.Hotel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja realmente apagar este cadastro? Esta ação não poderá ser desfeita!</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelID)*@
+            @Html.LabelFor(model => model.HotelName, "ID")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelID)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelName)*@
+            @Html.LabelFor(model => model.HotelName, "Nome")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelName)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelEvaluation)*@
+            @Html.LabelFor(model => model.HotelName, "Avaliação")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelEvaluation)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelDescription)*@
+            @Html.LabelFor(model => model.HotelName, "Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelDescription)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelAddress)*@
+            @Html.LabelFor(model => model.HotelName, "Endereço")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelAddress)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelComplement)*@
+            @Html.LabelFor(model => model.HotelName, "Complemento")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelComplement)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelCEP)*@
+            @Html.LabelFor(model => model.HotelName, "CEP")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelCEP)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelCity)*@
+            @Html.LabelFor(model => model.HotelName, "Cidade")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelCity)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HotelState)*@
+            @Html.LabelFor(model => model.HotelName, "Estado")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelState)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Lista de Hoteis", "Read")
+        </div>
+    }
+</div>

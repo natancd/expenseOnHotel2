@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ExpenseOnHotel2.Hotel>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Lista de Hotéis</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo hotel", "Create")
+</p>
+
+@using (Html.BeginForm("Read", "Home", FormMethod.Get))
+{
+    <p>
+        Nome do Hotel: @Html.TextBox("searchStringName")
+        <input type="submit" value="Buscar" />
+    </p>
+    <p>
+        Nome da Comodidade: @Html.TextBox("searchStringAmenities")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelEvaluation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelComplement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelCEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelAmenities)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelEvaluation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelComplement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelCEP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelAmenities)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Update", new { HotelID = item.HotelID }) |
+                @Html.ActionLink("Excluir", "Delete", new { HotelID = item.HotelID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Início", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
